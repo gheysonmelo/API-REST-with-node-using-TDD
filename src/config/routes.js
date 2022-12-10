@@ -3,5 +3,8 @@ module.exports = (app) => {
 
     app.route("/accounts").get(app.routes.accounts.getAll).post(app.routes.accounts.create);
 
-    app.route("/accounts/:id").get(app.routes.accounts.get);
+    app.route("/accounts/:id")
+        .get(app.routes.accounts.get)
+        .put(app.routes.accounts.update)
+        .delete(app.routes.accounts.remove);
 };
